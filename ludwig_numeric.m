@@ -28,7 +28,8 @@ for rank = 1:n+1
 end
 
 probs = flip(prob_mat(:,1));
-plot(probs);
+x = 0:n;
+bar(x,probs);
 title('Toy Numeric Example')
 xlabel('Final size Z') 
 ylabel('Probability') 

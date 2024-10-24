@@ -25,8 +25,8 @@ for l = 1:n
     end
     probs_2(l+1) = nchoosek(n,l) * double(subs(phi, lambda*(n-l)/n))^(l+m) - total;
 end
-
-plot(probs_2);
+x = 0:n;
+bar(x,probs_2);
 title('Numeric Example - n=50,m=1,\lambda=2')
 xlabel('Final size Z') 
 ylabel('Probability') 
