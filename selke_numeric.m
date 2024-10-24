@@ -1,7 +1,7 @@
 % Initialisation:
 
 n = 50; % Initial susceptibles
-m = 3; % Initial infectives
+m = 1; % Initial infectives
 lambda = 2; % Rate of infectious contact
 
 %Laplace transform:
@@ -26,4 +26,8 @@ for l = 1:n
     probs_2(l+1) = nchoosek(n,l) * double(subs(phi, lambda*(n-l)/n))^(l+m) - total;
 end
 
-plot(probs_2)
+plot(probs_2);
+title('Numeric Example - n=50,m=1,\lambda=2')
+xlabel('Final size Z') 
+ylabel('Probability') 
+exportgraphics(gca,'selke_50_1_2.pdf','ContentType','vector')

@@ -1,7 +1,7 @@
 % Initialisation:
 
-n = 57; % Initial susceptibles
-m = 2; % Initial infectives
+n = 50; % Initial susceptibles
+m = 1; % Initial infectives
 lambda = 2; % Rate of infectious contact
 
 % Make martix of probabilitities for each generation.
@@ -24,10 +24,15 @@ for rank = 1:n+1
             end
         end
     end
-    rank
+    print(rank);
 end
 
 probs = flip(prob_mat(:,1));
+plot(probs);
+title('Toy Numeric Example')
+xlabel('Final size Z') 
+ylabel('Probability') 
+exportgraphics(gca,'ludwig_50_1_2.pdf','ContentType','vector')
 
 function prob = trans(i, s, j, lambda, n)
     %Laplace transform:
